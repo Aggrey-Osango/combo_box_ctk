@@ -10,7 +10,7 @@ ctk.set_appearance_mode ("light")
 
 # Global variable
 app_geometry = "600x520"
-c_radius, padding       = 7, 10
+c_radius, pad_x, pad_y       = 7, 10, 10
 framex, framey = 590, 510
 widthx,heighty = 170, 35
 
@@ -36,7 +36,7 @@ user_name = ctk.CTkEntry (master = frame, width = widthx, height = heighty, corn
 
 user_pwd = ctk.CTkEntry (master = frame, width = widthx, height = heighty, corner_radius = c_radius, show = "*")
 
-msg_label = ctk.CTkLabel(master = frame, width = widthx, height = heighty, corner_radius = c_radius, textvariable = text_var, bg_color = "yellow")
+msg_label = ctk.CTkLabel(master = frame, width = widthx, height = 50, corner_radius = c_radius, textvariable = text_var, bg_color = "yellow")
 
 options = ctk.CTkComboBox (master = frame, width = widthx, height = heighty, corner_radius = c_radius, values = ["male", "Female"])
 
@@ -50,8 +50,8 @@ def log():
 
 btn_submit = ctk.CTkButton(master = frame, text = "Submit", corner_radius = c_radius, command = log)
 
+frame.pack(padx=pad_x, pady=pad_y)
 
-frame.pack(padx=padding, pady=padding)
 user_name.place(relx = x1, rely= y1, anchor = CENTER)
 
 user_pwd.place(relx=x2, rely=y2, anchor = CENTER)
